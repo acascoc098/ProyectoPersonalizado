@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login"
+    android:background="@drawable/fondodifuminado">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="390dp"
+        android:layout_height="700dp"
+        app:cardCornerRadius="50dp"
+        app:cardBackgroundColor="@color/verde"
+        android:layout_marginLeft="5dp"
+        >
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="700dp"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/ima1"
+                android:animateLayoutChanges="true" />
+
+            <EditText
+                android:id="@+id/etUsuarioReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/edittext"
+                android:hint="   Usuario"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"/>
+
+            <EditText
+                android:id="@+id/etContraseñaReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/edittext"
+                android:hint="   Contraseña"
+                android:inputType="textPassword"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/etIdiomas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/edittext"
+                    android:hint="  Idiomas:  "
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"/>
+                <CheckBox
+                    android:id="@+id/chk_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Español"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_auto" />
+
+                <CheckBox
+                    android:id="@+id/chk_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Ingles"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toEndOf="@+id/chk_1"
+                    app:layout_constraintTop_toTopOf="@+id/chk_1" />
+
+                <CheckBox
+                    android:id="@+id/chk_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Portugues"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toEndOf="@+id/chk_2"
+                    app:layout_constraintTop_toTopOf="@+id/chk_2" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/chk_1">
+                    <TextView
+                        android:id="@+id/etGenero"
+                        android:layout_width="100dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/edittext"
+                        android:hint="  Genero:  "
+                        android:layout_marginRight="10dp"
+                        />
+                    <RadioButton
+                        android:id="@+id/btr_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Hombre"
+                        android:textColor="@color/white"/>
+
+                    <RadioButton
+                        android:id="@+id/btr_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mujer"
+                        android:textColor="@color/white"/>
+
+                    <RadioButton
+                        android:id="@+id/btr_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Prefiero no decirlo"
+                        android:textColor="@color/white"/>
+                </RadioGroup>
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/etEdad"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="80dp"
+                        android:background="@drawable/edittext"
+                        android:textAlignment="center"
+                        android:hint="Año de nacimiento:  "
+                        android:layout_marginRight="10dp"
+                        />
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="80dp"
+                        android:minWidth="150dp"
+                        android:minHeight="50dp"
+                        android:background="@drawable/edittext"/>
+                </RadioGroup>
+            </LinearLayout>
+            <Button
+                android:id="@+id/btnValidarReg"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Validar"
+                android:textColor="@color/grisclaro"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/botonlogin"
+                app:backgroundTint="@null"/>
+            <Button
+                android:id="@+id/btnCreadoReg"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Ya tengo una cuenta"
+                android:textColor="@color/grisclaro"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/botonlogin"
+                app:backgroundTint="@null"/>
+
+            <TextView
+                android:id="@+id/tvErrorReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:background="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:visibility="gone"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
