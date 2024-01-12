@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -71,6 +72,13 @@ class MainActivity : AppCompatActivity() {
 
         navView.setupWithNavController(navController)
 
+        /*
+Hacemos que el componente de navegación, funcione correctamente con cada uno de los
+elementos del Bottom
+1.- Sin esto, no podrá navegar a ningún destino.
+*/
+        binding.appBarMain.appBottomBar.myBottonNavigation.setupWithNavController( navController )
+
     }
     //método que es llamado después de crear la vista del activity.
     /*@SuppressLint("ResourceType")
@@ -112,6 +120,12 @@ Para controlar los eventos de los items del toolbar
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.toolbar_menu, menu)
         return true
+    }
+
+    private fun initFab(){
+        binding.appBarMain.appBottomBar.fab.setOnClickListener {
+            Toast.makeText(this, "Pulso + ", Toast.LENGTH_LONG).show()
+        }
     }
 
 }
