@@ -73,10 +73,10 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         /*
-Hacemos que el componente de navegación, funcione correctamente con cada uno de los
-elementos del Bottom
-1.- Sin esto, no podrá navegar a ningún destino.
-*/
+        Hacemos que el componente de navegación, funcione correctamente con cada uno de los
+        elementos del Bottom
+        1.- Sin esto, no podrá navegar a ningún destino.
+        */
         binding.appBarMain.appBottomBar.myBottonNavigation.setupWithNavController( navController )
 
     }
