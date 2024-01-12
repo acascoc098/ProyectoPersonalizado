@@ -12,5 +12,8 @@
     <color name="gris">#95A3B3 </color>
     <color name="moradoclaro">#513d85</color>
     <color name="grisclaro">#c1bdc9</color>
+    <color name="blue_ligth">#03A9F4</color>
+    <color name="teal_200">#80CBC4</color>
+    <color name="teal_700">#00796B</color>
 
 </resources>

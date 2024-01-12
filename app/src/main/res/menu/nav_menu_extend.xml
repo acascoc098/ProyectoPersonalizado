@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn = "navigation_view">
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/homeFragment"
+            android:icon="@drawable/casa"
+            android:title="Home" />
+        <item
+            android:id="@+id/settingsFragment"
+            android:icon="@android:drawable/ic_menu_manage"
+            android:title="Settings" />
+        <item
+            android:id="@+id/shareFragment"
+            android:icon="@android:drawable/ic_menu_set_as"
+            android:title="Share" />
+        <item
+            android:id="@+id/aboutFragment"
+            android:icon="@android:drawable/ic_dialog_info"
+            android:title="About Us" />
+        <item
+            android:id="@+id/hospedajeFragment"
+            android:icon="@android:drawable/ic_dialog_dialer"
+            android:title="List hotels" />
+    </group>
+    <item
+        android:title="">
+        <menu>
+            <item></item>
+            <item></item>
+            <item></item>
+            <item></item>
+            <item></item>
+            <item></item>
+            <item></item>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@android:drawable/ic_lock_idle_charging"
+                android:title="Logout" />
+        </menu>
+    </item>
+</menu>
