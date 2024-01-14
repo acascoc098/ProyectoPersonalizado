@@ -57,7 +57,7 @@ class DialogEditarHotel(val context: Context) {
                     val telefono = textoTelefono.text.toString()
                     val url = textoUrl.text.toString()
                     if (nombre.isNotEmpty() && ciudad.isNotEmpty() && provincia.isNotEmpty() && telefono.isNotEmpty() && url.isNotEmpty()){
-                        Toast.makeText(context, "Hotel editado correctamente", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "Bar editado correctamente", Toast.LENGTH_SHORT).show()
                         val nuevoHotel = Hotel(nombre, ciudad, provincia, telefono, url)
                         listHotels.removeAt(pos)
                         listHotels.add(pos, nuevoHotel)

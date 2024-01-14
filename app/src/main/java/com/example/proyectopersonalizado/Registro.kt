@@ -32,10 +32,10 @@ class Registro : AppCompatActivity() {
         guardarButton = findViewById(R.id.btnValidarReg)
         creadoButton = findViewById(R.id.btnCreadoReg)
 
-        val spinner = findViewById<Spinner>(R.id.spinner)
+        //val spinner = findViewById<Spinner>(R.id.spinner)
         val adapter = ArrayAdapter.createFromResource(this, R.array.opciones, android.R.layout.simple_spinner_item)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner.setAdapter(adapter)
+        //spinner.setAdapter(adapter)
 
         // Crear la lista de usuarios
         listaUsuarios = ListaUsuario

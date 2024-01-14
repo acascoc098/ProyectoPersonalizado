@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar) //nuestro objeto toolbar. B. de herra.
         setSupportActionBar(toolbar) //Lo posicionamos en la barra superior
 
-        //Parte del Drawer
+        /*//Parte del Drawer
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id. container_fragment) as
                     NavHostFragment //Nuestro NavHostFragment
@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
         elementos del Bottom
         1.- Sin esto, no podrá navegar a ningún destino.
         */
-        binding.appBarMain.appBottomBar.myBottonNavigation.setupWithNavController( navController )
+        binding.appBarMain.appBottomBar.myBottonNavigation.setupWithNavController( navController )*/
 
     }
     //método que es llamado después de crear la vista del activity.
@@ -97,7 +97,7 @@ Para controlar los eventos de los items del toolbar
                 true
             }
             R.id.toolbar_hotels -> {
-                val action = FragmentListDirections.actionFragmentListToFragmentHotels(nombre = "José Andrés Garrido Gutiérrez", curso = "2º de Desarrollo de aplicaiones multiplataforma")
+                val action = FragmentListDirections.actionFragmentListToFragmentHotels(nombre = "Andrea Castilla Cocera", curso = "2º de Desarrollo de aplicaiones multiplataforma")
                 navController.navigate(action)
                 true
             }

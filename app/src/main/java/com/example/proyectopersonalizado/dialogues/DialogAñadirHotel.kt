@@ -40,7 +40,7 @@ class DialogAñadirHotel(private val context: Context) : DialogFragment() {
                     val telefono = textoTelefono.text.toString()
                     val url = textoUrl.text.toString()
                     if (nombre.isNotEmpty() && ciudad.isNotEmpty() && provincia.isNotEmpty() && telefono.isNotEmpty() && url.isNotEmpty()){
-                        Toast.makeText(context, "Hotel agregado correctamente", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "Bar agregado correctamente", Toast.LENGTH_SHORT).show()
                         val hotel = Hotel(nombre, ciudad, provincia, telefono, url)
                         listHotels.add(hotel)
                         val newPos = (listHotels.size-1)

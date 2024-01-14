@@ -3,19 +3,19 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@drawable/fondodifuminado">
+    android:background="@color/nuevo">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_gravity="center"
-        android:background="@drawable/hotel"
+        android:background="@drawable/descarga"
         android:animateLayoutChanges="true" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Edita el hotel"
+        android:text="Edita el bar"
         android:textSize="80px"
         android:gravity="center"
         android:textStyle="bold"/>

@@ -13,9 +13,9 @@ class DialogBorrarHotel(val context: Context) {
     fun showConfirmationDialog(pos: Int, listHotels: MutableList<Hotel>, name: String, recyclerView: RecyclerView) {
         val alertDialogBuilder = AlertDialog.Builder(context)
         alertDialogBuilder.setTitle("Confirmar eliminación")
-        alertDialogBuilder.setMessage("¿Estás seguro de que quieres eliminar el hotel "+name+"?")
+        alertDialogBuilder.setMessage("¿Estás seguro de que quieres eliminar el bar "+name+"?")
         alertDialogBuilder.setPositiveButton("Sí") { dialog, _ ->
-            Toast.makeText(context, "Borraremos el hotel de posición $pos", Toast.LENGTH_LONG).show()
+            Toast.makeText(context, "Borraremos el bar de posición $pos", Toast.LENGTH_LONG).show()
             listHotels.removeAt(pos)
             recyclerView.adapter?.notifyItemRemoved(pos)
             recyclerView.adapter?.notifyItemRangeChanged(pos, listHotels.size)

@@ -1,5 +1,12 @@
 <resources>
-    <string name="app_name">Proyecto Personalizado</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">Bares</string>
+    <string name="usu">Usuario:</string>
+    <string name="usu2">Introduce tu usuario...</string>
+    <string name="contra">Contraseña:</string>
+    <string name="contra2">Introduce tu contraseña...</string>
+    <string name="boton">Acceder</string>
+    <string name="yop">acascoc098</string>
+    <string name="minombre">Andrea Castilla Cocera</string>
 </resources>

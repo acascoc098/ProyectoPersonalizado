@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".FragmentHotels"
-    android:background="@drawable/fondodifuminado">
+    android:background="@color/nuevo">
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view2"
         android:layout_gravity="center"
@@ -13,7 +13,7 @@
         android:layout_height="600dp"
         android:layout_margin="5dp"
         app:cardCornerRadius="50dp"
-        app:cardBackgroundColor="@color/verde"
+        app:cardBackgroundColor="@color/btn"
         >
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="350dp"
@@ -27,14 +27,14 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="30dp"
-                android:background="@drawable/hotel"/>
+                android:background="@drawable/descarga" />
 
             <TextView
                 android:id="@+id/tvtextodispo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/grisclaro"
-                android:text="Proyecto realizado por:"
+                android:textColor="@color/black"
+                android:text="Autora del proyecto:"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:gravity="center" />
@@ -60,7 +60,7 @@
                 android:id="@+id/tvtextodispo2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/grisclaro"
+                android:textColor="@color/black"
                 android:text="Curso: "
                 android:textSize="20sp"
                 android:textStyle="bold"

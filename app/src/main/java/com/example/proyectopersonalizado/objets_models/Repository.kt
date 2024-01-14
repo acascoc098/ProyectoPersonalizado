@@ -5,44 +5,19 @@ import com.example.proyectopersonalizado.models.Hotel
 object Repository {
     var listHotels : List<Hotel> = listOf(
         Hotel(
-            "Antiguo Palacio de Atienza" , "Atienza", "Guadalajara" ,
-            "975 45 54 45" , "https://www.tuscasasrurales.com/imagenes/galeria/8619_g28/ico_8619.jpg"
+            "El Paso", "Cazorla", "Jaén", "123456789", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcazorla.es%2Fturismo%2Fbars-and-tapas%2F&psig=AOvVaw2v0_aP_crCs4_ZOaS9PiDT&ust=1705177563076000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKC0-frX2IMDFQAAAAAdAAAAABAD"
         ),
         Hotel(
-            "La Casa del Vaquero" , "Abiada", "Cantabria" ,
-            "978 65 56 65" , "https://www.tuscasasrurales.com/imagenes/galeria/9472_g98/ico_9472.jpg"
+            "La Toba", "Cazorla", "Jaén", "123456789", "https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.turismoencazorla.com%2Fdondecomer%2Flatoba.php&psig=AOvVaw2kS_NLvV-43Xdhxs5vdYqO&ust=1705177622219000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPCq3ZTY2IMDFQAAAAAdAAAAABAD"
         ),
         Hotel(
-            "Hotel Ritz Carlton" , "Ciudad de México", "Ciudad de México" ,
-        "+52 55 2121 1818" , "https://media.hrs.com/media/image/c7/fa/3e/Moscow_The_Ritz-Carlton-Moskau-Aussenansicht-223214_600x600.jpg"
+            "Casa Tino", "Cazorla", "Jaén", "123456789", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fguiadecazorlayubeda.com%2Fcasa-tino%2F&psig=AOvVaw2h34F5K3ppwrPSsMx0a8ks&ust=1705177667267000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIDnnqvY2IMDFQAAAAAdAAAAABAD"
         ),
         Hotel(
-            "Hotel W Barcelona" , "Barcelona", "España" ,
-            "+34 932 95 28 00" , "https://cf.bstatic.com/xdata/images/hotel/max1024x768/439254613.jpg?k=ea6c76df54497fb1882fe03f96cbc4e774b4898ada95323cafb6042a292e935b&o=&hp=1"
+            "La Cantina", "Cazorla", "Jaén", "123456789", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fguiadecazorlayubeda.com%2Fcafe-bar-la-cantina%2F&psig=AOvVaw3e_kkzUEjvrlBnBFNknw2d&ust=1705177721392000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJCYtMPY2IMDFQAAAAAdAAAAABAD"
         ),
         Hotel(
-            "Hotel Burj Al Arab" , "Dubái", "Emiratos Árabes Unidos" ,
-            "+971 4 301 7777" , "https://cf.bstatic.com/xdata/images/hotel/max1024x768/457389536.jpg?k=1b5b93930a67d2372178da9df3c090ec47fb1f5622f5664dde18c4362f31b355&o=&hp=1"
-        ),
-        Hotel(
-            "Hotel Eden Roc" , "Miami Beach", "Florida" ,
-            "+1 305-531-0000" , "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/14/03/14/eden-roc-by-brava-hoteles.jpg?w=700&h=-1&s=1"
-        ),
-        Hotel(
-            "Hotel The Oberoi Udaivilas" , "Udaipur", " India" ,
-            "+91 294 243 3300" , "https://cf.bstatic.com/xdata/images/hotel/max1024x768/48812893.jpg?k=a034ea2f5c5431b95bedb68ac0aaa9507f6d2ba261a3182554b1dc81b4ab0f52&o=&hp=1"
-        ),
-        Hotel(
-            "Hotel Four Seasons George V" , "París", "Francia" ,
-            "+33 1 49 52 70 00" , "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/07/b0/ce/four-seasons-hotel-george.jpg?w=700&h=-1&s=1"
-        ),
-        Hotel(
-            "Hotel The Ritz London" , "Londres", "Reino Unido" ,
-            "+44 20 7493 8181" , "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/0f/0d/04/the-ritz-london-exterior.jpg?w=700&h=-1&s=1"
-        ),
-        Hotel(
-            "Hotel Bali Mandira " , "Bali", "Indonesia" ,
-            "+62 361 751381" , "https://cf.bstatic.com/xdata/images/hotel/max1024x768/499893968.jpg?k=fb69544b39e3cd55136ae50322fbe9974ab46d24cc3eef65ba4ebfcf6750d243&o=&hp=1"
+            "La Yedra", "Cazorla", "Jaén", "123456789", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fgastroranking.es%2Fr%2Frestaurante-la-yedra_24681%2F&psig=AOvVaw3Gln0NU0_SSHntJjLy2DiC&ust=1705177747150000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPjV_s7Y2IMDFQAAAAAdAAAAABAD"
         )
     )
     fun addHotel(hotel: Hotel) {

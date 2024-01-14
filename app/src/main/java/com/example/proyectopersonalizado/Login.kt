@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.util.EnumSet.range
 
@@ -28,11 +29,11 @@ class Login : AppCompatActivity() {
 
         val intent = intent
         usuarioClase = Usuario()
-        etUsuario = findViewById(R.id.etUsuario)
-        etContra = findViewById(R.id.etContra)
-        btnValidar = findViewById(R.id.btnValidar)
-        tvError = findViewById(R.id.tvError)
-        btnRegistro = findViewById(R.id.btnRegistrar)
+        etUsuario = findViewById(R.id.usuario)
+        etContra = findViewById(R.id.usuario)
+        btnValidar = findViewById(R.id.boton)
+        //tvError = findViewById(R.id.tvError)
+        btnRegistro = findViewById(R.id.nuevoLogging)
         btnValidar.setOnClickListener {
             val MYUSER = etUsuario.text.toString()
             val MYPASS = etContra.text.toString()
@@ -43,8 +44,9 @@ class Login : AppCompatActivity() {
                 val intent = Intent(this@Login, MainActivity::class.java)
                 startActivity(intent)
             } else {
-                tvError.visibility = View.VISIBLE
-                tvError.text = "Usuario o contraseña incorrectos"
+                /*tvError.visibility = View.VISIBLE
+                tvError.text = "Usuario o contraseña incorrectos"*/
+                Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_LONG).show()
             }
         }
         btnRegistro.setOnClickListener{
