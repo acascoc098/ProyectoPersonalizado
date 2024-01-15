@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar) //nuestro objeto toolbar. B. de herra.
         setSupportActionBar(toolbar) //Lo posicionamos en la barra superior
 
-        /*//Parte del Drawer
+        //Parte del Drawer
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id. container_fragment) as
                     NavHostFragment //Nuestro NavHostFragment
@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
         elementos del Bottom
         1.- Sin esto, no podrá navegar a ningún destino.
         */
-        binding.appBarMain.appBottomBar.myBottonNavigation.setupWithNavController( navController )*/
+        binding.appBarMain.appBottomBar.myBottonNavigation.setupWithNavController( navController )
 
     }
     //método que es llamado después de crear la vista del activity.
@@ -88,8 +88,8 @@ class MainActivity : AppCompatActivity() {
         return true
     }*/
     /*
-Para controlar los eventos de los items del toolbar
-*/
+    Para controlar los eventos de los items del toolbar
+    */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.toolbar_list -> {
