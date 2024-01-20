@@ -10,11 +10,11 @@
             android:icon="@drawable/casa"
             android:title="Home" />
         <item
-            android:id="@+id/settingsFragment"
+            android:id="@+id/fragmentHotels"
             android:icon="@android:drawable/ic_menu_manage"
-            android:title="Settings" />
+            android:title="Bares" />
         <item
-            android:id="@+id/shareFragment"
+            android:id="@+id/hospedajeFragment"
             android:icon="@android:drawable/ic_menu_set_as"
             android:title="Share" />
         <item
@@ -22,15 +22,13 @@
             android:icon="@android:drawable/ic_dialog_info"
             android:title="About Us" />
         <item
-            android:id="@+id/hospedajeFragment"
+            android:id="@+id/frafmentList"
             android:icon="@android:drawable/ic_dialog_dialer"
-            android:title="List hotels" />
+            android:title="List" />
     </group>
     <item
         android:title="">
         <menu>
-            <item></item>
-            <item></item>
             <item></item>
             <item></item>
             <item></item>

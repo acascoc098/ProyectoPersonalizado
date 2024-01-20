@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".FragmentStart"
-    android:background="@drawable/fondodifuminado">
+    android:background="@color/nuevo">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_view2"
@@ -28,14 +28,14 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="30dp"
-                    android:background="@drawable/hotel"/>
+                    android:background="@drawable/descarga"/>
 
                 <TextView
                     android:id="@+id/tvtexto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/grisclaro"
-                    android:text="Listado de hoteles"
+                    android:text="Listado de Bares"
                     android:textSize="60sp"
                     android:textStyle="bold"
                     android:gravity="center" />

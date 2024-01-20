@@ -9,8 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
@@ -29,27 +31,32 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
     private lateinit var navHostFragment: NavHostFragment
+    private lateinit var drawerLayout: DrawerLayout
     lateinit var appBarConfiguration: AppBarConfiguration
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint("MissingInflatedId", "ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        drawerLayout = findViewById(R.id.my_drawer)
         navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         navController = navHostFragment.navController //nuestro navController, para la navegación
         val toolbar: Toolbar = findViewById(R.id.toolbar) //nuestro objeto toolbar. B. de herra.
         setSupportActionBar(toolbar) //Lo posicionamos en la barra superior
 
         //Parte del Drawer
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id. container_fragment) as
-                    NavHostFragment //Nuestro NavHostFragment
-        val navController = navHostFragment. navController //Nuestro navController
+        //val navHostFragment = supportFragmentManager.findFragmentById(R.id.container_fragment) as NavHostFragment //Nuestro NavHostFragment
+        //val navController = navHostFragment.navController //Nuestro navController
 
         setSupportActionBar(binding.appBarMain.myToolbar)
 
         //Necesitamos nuestro componente principal del Drawer.
         val navView = binding.myNavView
 
+        val toggle = ActionBarDrawerToggle(this,drawerLayout,toolbar,R.anim.slide_in,R.anim.slide_on)
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
         /*
         Con appBarConfiguration, nos aseguramos la CONFIGURACIÓN mediante un drawer y sus destinos.
         1.- Administra el botón de navegación. Consideramos primer nivel todos excepto el listado de
@@ -60,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         3.- Hacemos que se sincronice o funcione con el navigation drawer.
         */
         appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.homeFragment,R.id.settingsFragment, R.id.shareFragment, R.id.aboutFragment), binding.myDrawer
+            setOf(R.id.homeFragment,R.id.fragmentList, R.id.hospedajeFragment, R.id.aboutFragment), binding.myDrawer
         )
 
         /*
@@ -78,6 +85,8 @@ class MainActivity : AppCompatActivity() {
         1.- Sin esto, no podrá navegar a ningún destino.
         */
         binding.appBarMain.appBottomBar.myBottonNavigation.setupWithNavController( navController )
+
+        initFab()
 
     }
     //método que es llamado después de crear la vista del activity.
@@ -112,7 +121,7 @@ class MainActivity : AppCompatActivity() {
     2.- Sin esto, no se abre/cierra el Drawer.
     */
     override fun onSupportNavigateUp(): Boolean{
-        val navController = findNavController(R.id.container_fragment)
+        //val navController = findNavController(R.id.container_fragment)
         return navController. navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 

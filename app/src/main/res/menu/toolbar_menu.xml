@@ -9,6 +9,6 @@
     <item
         android:id="@+id/toolbar_hotels"
         android:icon="@drawable/ima1"
-        android:title="Hoteles"
+        android:title="Bares"
         />
 </menu>

@@ -81,7 +81,7 @@
             android:text="@string/boton"
             app:backgroundTint="@null" />
 
-        <TextView
+        <Button
             android:id="@+id/nuevoLogging"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -90,9 +90,11 @@
             android:clickable="true"
             android:focusable="true"
             android:text="REGSÍSTRATE AQUÍ"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20dp"
-            tools:ignore="OnClick" />
+            android:background="@color/btn"
+            tools:ignore="OnClick"
+            app:backgroundTint="@null"/>
 
     </LinearLayout>
 

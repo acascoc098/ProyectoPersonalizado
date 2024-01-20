@@ -27,7 +27,7 @@ class Login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val intent = intent
+        //val intent = intent
         usuarioClase = Usuario()
         etUsuario = findViewById(R.id.usuario)
         etContra = findViewById(R.id.usuario)
