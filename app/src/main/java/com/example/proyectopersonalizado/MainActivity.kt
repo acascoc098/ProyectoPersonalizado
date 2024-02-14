@@ -1,30 +1,19 @@
 package com.example.proyectopersonalizado
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
-import android.widget.ImageButton
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.proyectopersonalizado.controler.Controller
 import com.example.proyectopersonalizado.databinding.ActivityMainBinding
-import com.example.proyectopersonalizado.databinding.FragmentListBinding
 
 
 class MainActivity : AppCompatActivity() {
@@ -32,14 +21,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var navHostFragment: NavHostFragment
     private lateinit var drawerLayout: DrawerLayout
-    lateinit var appBarConfiguration: AppBarConfiguration
+    //lateinit var appBarConfiguration: AppBarConfiguration
     @SuppressLint("MissingInflatedId", "ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        drawerLayout = findViewById(R.id.my_drawer)
+        drawerLayout = findViewById(R.id.fragmentContainerView)
         navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         navController = navHostFragment.navController //nuestro navController, para la navegación
         val toolbar: Toolbar = findViewById(R.id.toolbar) //nuestro objeto toolbar. B. de herra.
@@ -49,56 +38,72 @@ class MainActivity : AppCompatActivity() {
         //val navHostFragment = supportFragmentManager.findFragmentById(R.id.container_fragment) as NavHostFragment //Nuestro NavHostFragment
         //val navController = navHostFragment.navController //Nuestro navController
 
-        setSupportActionBar(binding.appBarMain.myToolbar)
+        //setSupportActionBar(binding.toolbar)
 
         //Necesitamos nuestro componente principal del Drawer.
-        val navView = binding.myNavView
+        val navView = binding.navigationView
 
         val toggle = ActionBarDrawerToggle(this,drawerLayout,toolbar,R.anim.slide_in,R.anim.slide_on)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
-        /*
-        Con appBarConfiguration, nos aseguramos la CONFIGURACIÓN mediante un drawer y sus destinos.
-        1.- Administra el botón de navegación. Consideramos primer nivel todos excepto el listado de
-        hoteles. Por tanto, configura destinos.
-        2.- Como tenemos un DrawerLayout, lo configuramos para que el icono cambie con el icono de la
-        hamburguesa cuando esté en el home y con la
-        flecha <- cuando esté en un nivel inferior.
-        3.- Hacemos que se sincronice o funcione con el navigation drawer.
-        */
-        appBarConfiguration = AppBarConfiguration(
+
+        navView.setNavigationItemSelectedListener { menuItem ->
+            val currentFragmentId = navController.currentDestination?.id
+
+            when (menuItem.itemId) {
+                R.id.fragmentList -> {
+                    navController.navigate(R.id.fragmentList)
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    true
+                }
+                R.id.fragmentHotels -> {
+                    if (currentFragmentId == R.id.fragmentList) {
+                        val action = FragmentListDirections.actionFragmentListToFragmentHotels(
+                            nombre = "Andrea Castilla Cocera",
+                            curso = "Programación multimedia"
+                        )
+                        navController.navigate(action)
+                    } else if (currentFragmentId == R.id.infoFragment) {
+                        val action = FragmentInformacionDirections.actionFragmentInformacionToFragmentHotels(
+                            nombre = "Andrea Castilla Cocera",
+                            curso = "Programación multimedia"
+                        )
+                        navController.navigate(action)
+                    }else if  (currentFragmentId == R.id.homeFragment) {
+
+                        val action = FragmentHomeDirections.actionHomeFragmentToFragmentHotels(
+                            nombre = "Andrea Castilla Cocera",
+                            curso = "Programación multimedia"
+                        )
+                        navController.navigate(action)
+                    }
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    true
+                }
+                R.id.nav_logout -> {
+                    val intent = Intent(this@MainActivity, Login::class.java)
+                    startActivity(intent)
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    true
+                }
+                else -> false
+            }
+        }
+
+        /*appBarConfiguration = AppBarConfiguration(
             setOf(R.id.homeFragment,R.id.fragmentList, R.id.hospedajeFragment, R.id.aboutFragment), binding.myDrawer
         )
 
-        /*
-        1.- Aplica la configuración del appBarConfiguration, vinculándolo con la navegación a
-        partir del navController.
-        2.- !!!!!Sin esto, no veríamos el botón de navegación !!!!!!
-        */
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         navView.setupWithNavController(navController)
 
-        /*
-        Hacemos que el componente de navegación, funcione correctamente con cada uno de los
-        elementos del Bottom
-        1.- Sin esto, no podrá navegar a ningún destino.
-        */
-        binding.appBarMain.appBottomBar.myBottonNavigation.setupWithNavController( navController )
+        binding.appBottomBar.myBottonNavigation.setupWithNavController( navController )
 
-        initFab()
+        initFab()*/
 
     }
-    //método que es llamado después de crear la vista del activity.
-    /*@SuppressLint("ResourceType")
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflar el menú; esto agrega elementos a la barra de acción si está presente.
-        menuInflater.inflate(R.menu.toolbar_menu, menu)
-        return true
-    }*/
-    /*
-    Para controlar los eventos de los items del toolbar
-    */
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.toolbar_list -> {
@@ -114,28 +119,22 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /*
-    Con este método, hacemos que funcione correctamente el botón de navegación hacia arriba.
-    1.- Esto hace que que responda a los eventos de navegación. Controlará la apertura de abrir
-    la barra lateral del drawer y su cierre.
-    2.- Sin esto, no se abre/cierra el Drawer.
-    */
-    override fun onSupportNavigateUp(): Boolean{
-        //val navController = findNavController(R.id.container_fragment)
-        return navController. navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
-    }
 
+    /*override fun onSupportNavigateUp(): Boolean{
+        return navController. navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }*/
+
+    @SuppressLint("ResourceType")
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.toolbar_menu, menu)
         return true
     }
 
-    private fun initFab(){
+    /*private fun initFab(){
         binding.appBarMain.appBottomBar.fab.setOnClickListener {
             Toast.makeText(this, "Pulso + ", Toast.LENGTH_LONG).show()
         }
-    }
+    }*/
 
 }
 

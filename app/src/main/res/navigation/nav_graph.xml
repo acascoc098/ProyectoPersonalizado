@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/fragmentList">
     <fragment
         android:id="@+id/fragmentHotels"
         android:name="com.example.proyectopersonalizado.FragmentHotels"
@@ -18,6 +18,9 @@
         <argument
             android:name="curso"
             app:argType="string" />
+        <action
+            android:id="@+id/action_fragmentHotels_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragmentList"
@@ -27,21 +30,53 @@
         <action
             android:id="@+id/action_fragmentList_to_fragmentHotels"
             app:destination="@id/fragmentHotels" />
+        <action
+            android:id="@+id/action_fragmentList_to_infoFragment"
+            app:destination="@id/infoFragment" />
+        <action
+            android:id="@+id/action_fragmentList_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.proyectopersonalizado.FragmentStart"
+        android:name="com.example.proyectopersonalizado.FragmentHome"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_fragmentList"
+            app:destination="@id/fragmentList" />
+        <action
+            android:id="@+id/action_homeFragment_to_fragmentHotels"
+            app:destination="@id/fragmentHotels" />
+    </fragment>
     <fragment
-        android:id="@+id/aboutFragment"
-        android:name="com.example.proyectopersonalizado.FragmentList"
-        android:label="fragment_about"
-        tools:layout="@layout/fragment_about" />
-    <fragment
-        android:id="@+id/hospedajeFragment"
-        android:name="com.example.proyectopersonalizado.FragmentHotels"
-        android:label="fragment_hospedaje"
-        tools:layout="@layout/fragment_hospedaje" />
+        android:id="@+id/infoFragment"
+        android:name="com.example.proyectopersonalizado.FragmentInformacion"
+        android:label="FragmentInformacion" >
+        <action
+            android:id="@+id/action_fragmentInformacion_to_fragmentHotels"
+            app:destination="@id/fragmentHotels" />
+        <action
+            android:id="@+id/action_fragmentInformacion_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_fragmentInformacion_to_fragmentList"
+            app:destination="@id/fragmentList" />
+        <argument
+            android:name="imagen"
+            app:argType="string" />
+        <argument
+            android:name="nombre"
+            app:argType="string" />
+        <argument
+            android:name="telefono"
+            app:argType="string" />
+        <argument
+            android:name="ciudad"
+            app:argType="string" />
+        <argument
+            android:name="provincia"
+            app:argType="string" />
+    </fragment>
 
 </navigation>

@@ -6,30 +6,17 @@
     <group
         android:checkableBehavior="single">
         <item
-            android:id="@+id/homeFragment"
-            android:icon="@drawable/casa"
-            android:title="Home" />
-        <item
             android:id="@+id/fragmentHotels"
             android:icon="@android:drawable/ic_menu_manage"
             android:title="Bares" />
         <item
-            android:id="@+id/hospedajeFragment"
-            android:icon="@android:drawable/ic_menu_set_as"
-            android:title="Share" />
-        <item
-            android:id="@+id/aboutFragment"
-            android:icon="@android:drawable/ic_dialog_info"
-            android:title="About Us" />
-        <item
-            android:id="@+id/frafmentList"
+            android:id="@+id/fragmentList"
             android:icon="@android:drawable/ic_dialog_dialer"
             android:title="List" />
     </group>
     <item
         android:title="">
         <menu>
-            <item></item>
             <item></item>
             <item></item>
             <item></item>

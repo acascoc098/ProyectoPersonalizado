@@ -3,20 +3,18 @@ package com.example.proyectopersonalizado
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import java.util.EnumSet.range
 
 class Login : AppCompatActivity() {
 
     private lateinit var etUsuario: EditText
     private lateinit var etContra: EditText
     private lateinit var btnValidar: Button
-    private lateinit var tvError: TextView
+    //private lateinit var tvError: TextView
     private lateinit var btnRegistro: Button
     private lateinit var usuarioClase: Usuario
     val nombread = "admin"
@@ -30,7 +28,7 @@ class Login : AppCompatActivity() {
         //val intent = intent
         usuarioClase = Usuario()
         etUsuario = findViewById(R.id.usuario)
-        etContra = findViewById(R.id.usuario)
+        etContra = findViewById(R.id.contraseña)
         btnValidar = findViewById(R.id.boton)
         //tvError = findViewById(R.id.tvError)
         btnRegistro = findViewById(R.id.nuevoLogging)

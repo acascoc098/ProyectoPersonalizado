@@ -6,15 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.proyectopersonalizado.controler.Controller
 import com.example.proyectopersonalizado.databinding.FragmentListBinding
+import com.example.proyectopersonalizado.ui.AdapterHotel
+import com.example.proyectopersonalizado.viewmodel.HotelViewModel
 
 class FragmentList : Fragment() {
-    lateinit var controlador: Controller
-    lateinit var enlace: FragmentListBinding
-    lateinit var botonFlotante: ImageButton
+    private val hotelViewModel: HotelViewModel by viewModels()
+    private lateinit var enlace: FragmentListBinding
+    private lateinit var botonFlotante: ImageButton
     private lateinit var myRecyclerView: RecyclerView
 
     override fun onCreateView(
@@ -30,11 +32,15 @@ class FragmentList : Fragment() {
         return rootView
     }
 
-    fun init() {
+    private fun init() {
         initRecyclerView()
-        controlador = Controller(requireContext())
-        controlador.setAdapter(myRecyclerView) // Pasa la referencia del RecyclerView
-        controlador.setAddButton(botonFlotante, myRecyclerView)
+
+        hotelViewModel.getListHotels().observe(viewLifecycleOwner, { hotels ->
+            (myRecyclerView.adapter as? AdapterHotel)?.updateData(hotels)
+        })
+
+        hotelViewModel.setAdapter(myRecyclerView) // Pasa la referencia del RecyclerView
+        hotelViewModel.setAddButton(botonFlotante, myRecyclerView)
     }
 
     private fun initRecyclerView() {
